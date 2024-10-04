@@ -1,0 +1,1 @@
+# party-lingo-translator-01925976cc5d
