@@ -1,62 +1,125 @@
+:root {
+    --primary-color: #3b82f6;
+    --background-color: #f3f4f6;
+    --text-color: #1f2937;
+    --border-color: #e5e7eb;
+}
+
 body {
-    font-family: 'Comic Sans MS', cursive;
-    background-color: #ffff00;
-    color: #ff00ff;
-    text-align: center;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.5;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
 .container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
-    background-color: #00ffff;
-    border: 5px solid #ff00ff;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 h1 {
-    font-size: 2.5em;
-    text-shadow: 2px 2px #ff0000;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #6b7280;
+}
+
+.translation-section, .history-section {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 textarea, select, button {
-    display: block;
     width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 1em;
-    border-radius: 10px;
-    border: 3px solid #ff00ff;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+}
+
+select {
+    flex: 1;
 }
 
 button {
-    background-color: #ff00ff;
-    color: #ffffff;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #cc00cc;
+    background-color: #2563eb;
 }
 
-#outputText {
-    background-color: #ffffff;
-    border: 3px solid #ff00ff;
-    border-radius: 10px;
-    padding: 10px;
+.output {
+    background-color: #f9fafb;
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    padding: 1rem;
     min-height: 100px;
-    margin: 10px 0;
+    margin-bottom: 1rem;
+}
+
+.speak-btn {
+    background-color: #10b981;
+}
+
+.speak-btn:hover {
+    background-color: #059669;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 #historyList {
-    text-align: left;
-    padding-left: 20px;
+    list-style-type: none;
+    padding: 0;
 }
 
 #historyList li {
-    margin-bottom: 5px;
+    background-color: #f9fafb;
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.translation-section, .history-section {
+    animation: fadeIn 0.5s ease-out;
 }
